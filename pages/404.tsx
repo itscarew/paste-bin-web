@@ -6,7 +6,7 @@ export default function NotFound() {
     return (
         <>
             <Layout>
-                What you thnk you are looking for is not here ... <Link href={"/"} >Go Paste</Link>
+                What you think you are looking for is not here ... <Link href={"/"} >Go Paste</Link>
             </Layout>
         </>
     )
