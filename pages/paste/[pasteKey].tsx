@@ -58,12 +58,12 @@ export default function Paste({ data }) {
                 </div>
             }
 
-            <div className="flex items-center mb-4" >
-                <div className=" text-lg mb-6 mr-4" >
+            <div className="mb-4" >
+                <div className=" text-lg mb-4" >
                     <h1 className="text-4xl mb-1" > {paste?.title} </h1>
                     <p> From <b> {paste?.author} </b>, {moment(paste?.createdAt).format('MMMM Do YYYY, h:mm a')} , written in  <b> {findLanguage(paste?.language)?.label} </b>. </p>
-                    <p> URL <a className="text-blue-700" href={`http://localhost:3000/paste/${paste?.pasteKey}`} target="/_blank" > http://localhost:3000/paste/{paste?.pasteKey} </a> </p>
-                    <p> <b className="text-blue-700 cursor-pointer" onClick={download} >Download Paste </b></p>
+                    <p> URL <a className="text-green-700" href={`http://localhost:3000/paste/${paste?.pasteKey}`} target="/_blank" > http://localhost:3000/paste/{paste?.pasteKey} </a> </p>
+                    <p> <b className="text-green-700 cursor-pointer" onClick={download} >Download Paste </b></p>
                 </div>
                 <div>
                     <QRCode value={`http://localhost:3000/paste/${paste?.pasteKey}`} size={156} />

@@ -16,7 +16,7 @@ export default function Header() {
             <div className="border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" >
                 <ul className="container mx-auto flex flex-wrap text-sm font-medium text-center text-gray-500 ">
                     <li className="mr-2">
-                        <Link href={"/"} className="inline-block p-4 text-blue-600 rounded-t-lg  ">Olas Paste</Link>
+                        <Link href={"/"} className="inline-block p-4 text-green-600 rounded-t-lg  ">Olas Paste</Link>
                     </li>
                     {routes.map((route) => {
                         return (
