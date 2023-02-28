@@ -54,7 +54,7 @@ export default function Home() {
     try {
       const res: any = await PasteApi.post(`pasteBin`, payload);
       if (res.data.data?.status !== "burn on reading") {
-        window.open(`http://localhost:3000/paste/${res.data.data?.pasteKey}`, "_blank");
+        window.open(`https://olas-paste-bin.onrender.com/paste/${res.data.data?.pasteKey}`, "_blank");
       } else {
         setPasteKey(res.data.data?.pasteKey)
       }
@@ -111,7 +111,7 @@ export default function Home() {
             <div>
               <span className="font-medium">Your paste is ready! </span>
               This paste will be rendered useless upon reading.
-              <a target={"/_blank"} href={`http://localhost:3000/paste/${pasteKey}`} className="font-medium"> http://localhost:3000/paste/{pasteKey}  </a>
+              <a target={"/_blank"} href={`https://olas-paste-bin.onrender.com/paste/${pasteKey}`} className="font-medium"> https://olas-paste-bin.onrender.com/paste/{pasteKey}  </a>
             </div>
           </div>
         }

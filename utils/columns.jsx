@@ -14,7 +14,7 @@ export const PasteColumns = [
     cell: (row) => (
       <Link
         style={{ color: "#2990d1" }}
-        href={`http://localhost:3000/paste/${row?.pasteKey}`}
+        href={`https://olas-paste-bin.onrender.com/paste/${row?.pasteKey}`}
       >
         {row.title}
       </Link>
