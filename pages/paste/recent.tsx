@@ -23,7 +23,7 @@ export default function Pastes({ data }) {
 }
 
 export async function getServerSideProps(context: NextRouter) {
-    const res: any = await PasteApi.get(`pasteBin`);
+    const res: any = await PasteApi.get(`/`);
     const data = res.data?.allPastes
     if (data === undefined) {
         return { props: { data: null } };

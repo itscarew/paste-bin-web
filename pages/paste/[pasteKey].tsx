@@ -62,11 +62,11 @@ export default function Paste({ data }) {
                 <div className=" text-lg mb-4" >
                     <h1 className="text-4xl mb-1" > {paste?.title} </h1>
                     <p> From <b> {paste?.author} </b>, {moment(paste?.createdAt).format('MMMM Do YYYY, h:mm a')} , written in  <b> {findLanguage(paste?.language)?.label} </b>. </p>
-                    <p> URL <a className="text-green-700" href={`https://olas-paste-bin.onrender.com/paste/${paste?.pasteKey}`} target="/_blank" > https://olas-paste-bin.onrender.com/paste/{paste?.pasteKey} </a> </p>
+                    <p> URL <a className="text-green-700" href={`https://paste-bin-nu.vercel.app/paste/${paste?.pasteKey}`} target="/_blank" > https://paste-bin-nu.vercel.app/paste/{paste?.pasteKey} </a> </p>
                     <p> <b className="text-green-700 cursor-pointer" onClick={download} >Download Paste </b></p>
                 </div>
                 <div>
-                    <QRCode value={`https://olas-paste-bin.onrender.com/paste/${paste?.pasteKey}`} size={156} />
+                    <QRCode value={`https://paste-bin-nu.vercel.app/paste/${paste?.pasteKey}`} size={156} />
                 </div>
             </div>
             <div>
@@ -85,7 +85,7 @@ export default function Paste({ data }) {
 export async function getServerSideProps(context: NextRouter) {
     const { pasteKey } = context.query
     try {
-        const res: any = await PasteApi.get(`pasteBin/${pasteKey}`);
+        const res: any = await PasteApi.get(`/${pasteKey}`);
         const data = res.data
         return { props: { data } }
     } catch (error) {

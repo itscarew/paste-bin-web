@@ -52,9 +52,9 @@ export default function Home() {
       pasteText: value
     }
     try {
-      const res: any = await PasteApi.post(`pasteBin`, payload);
+      const res: any = await PasteApi.post(`/`, payload);
       if (res.data.data?.status !== "burn on reading") {
-        window.open(`https://olas-paste-bin.onrender.com/paste/${res.data.data?.pasteKey}`, "_blank");
+        window.open(`https://paste-bin-nu.vercel.app/paste/${res.data.data?.pasteKey}`, "_blank");
       } else {
         setPasteKey(res.data.data?.pasteKey)
       }
@@ -111,7 +111,7 @@ export default function Home() {
             <div>
               <span className="font-medium">Your paste is ready! </span>
               This paste will be rendered useless upon reading.
-              <a target={"/_blank"} href={`https://olas-paste-bin.onrender.com/paste/${pasteKey}`} className="font-medium"> https://olas-paste-bin.onrender.com/paste/{pasteKey}  </a>
+              <a target={"/_blank"} href={`https://paste-bin-nu.vercel.app/paste/${pasteKey}`} className="font-medium"> https://paste-bin-nu.vercel.app/paste/{pasteKey}</a>
             </div>
           </div>
         }

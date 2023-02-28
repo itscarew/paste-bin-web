@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const PasteApi = axios.create({
-  baseURL: "https://olas-paste-bin.onrender.com/",
+  baseURL: "https://olas-paste-bin.onrender.com/pasteBin",
   headers: {
     "content-type": "application/json",
   },
