@@ -54,7 +54,7 @@ export default function Home() {
     try {
       const res: any = await PasteApi.post(`/`, payload);
       if (res.data.data?.status !== "burn on reading") {
-        window.open(`https://paste-bin-nu.vercel.app/paste/${res.data.data?.pasteKey}`, "_blank");
+        window.open(`${process.env.NEXT_PUBLIC_WEB_URL}/paste/${res.data.data?.pasteKey}`);
       } else {
         setPasteKey(res.data.data?.pasteKey)
       }
@@ -111,7 +111,7 @@ export default function Home() {
             <div>
               <span className="font-medium">Your paste is ready! </span>
               This paste will be rendered useless upon reading.
-              <a target={"/_blank"} href={`https://paste-bin-nu.vercel.app/paste/${pasteKey}`} className="font-medium"> https://paste-bin-nu.vercel.app/paste/{pasteKey}</a>
+              <a href={`${process.env.NEXT_PUBLIC_WEB_URL}/paste/${pasteKey}`} className="font-medium"> {process.env.NEXT_PUBLIC_WEB_URL}/paste/{pasteKey}</a>
             </div>
           </div>
         }

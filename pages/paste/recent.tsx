@@ -26,7 +26,7 @@ export async function getServerSideProps(context: NextRouter) {
     const res: any = await PasteApi.get(`/`);
     const data = res.data?.allPastes
     if (data === undefined) {
-        return { props: { data: null } };
+        return { notFound: true, };
     }
     return { props: { data } }
 }

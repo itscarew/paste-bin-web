@@ -14,7 +14,7 @@ export const PasteColumns = [
     cell: (row) => (
       <Link
         style={{ color: "#2990d1" }}
-        href={`https://paste-bin-nu.vercel.app/paste/${row?.pasteKey}`}
+        href={`${process.env.NEXT_PUBLIC_WEB_URL}/paste/${row?.pasteKey}`}
       >
         {row.title}
       </Link>
